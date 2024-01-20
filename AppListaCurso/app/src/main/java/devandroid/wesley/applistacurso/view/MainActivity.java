@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
 
         dadosPessoa = "Nome: ";
         dadosPessoa += pessoa.getPrimeiroNome();
-        dadosPessoa = " Sobrenome: ";
+        dadosPessoa += " Sobrenome: ";
         dadosPessoa += pessoa.getSobreNome();
-
+        Log.i("obj", "onCreate:  "+dadosPessoa);
     }
 
 
