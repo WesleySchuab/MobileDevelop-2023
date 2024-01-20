@@ -1,4 +1,4 @@
-package devandroid.wesley.applistacurso.model;
+package devandroid.wesley.applistacurso.view.model;
 
 public class Pessoa {
     private String primeiroNome;
