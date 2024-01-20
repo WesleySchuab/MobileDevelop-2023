@@ -6,99 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aplicativo Lista Vip Curso Android"
+        android:layout_marginTop="48dp"
+        android:text="@string/txt_titulo"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.033"
-        tools:layout_editor_absoluteX="50dp" />
-
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="Primeiro Nome"
-        android:inputType="text"
-        android:text="Primeiro Nome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.064"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="76dp"
-        android:ems="10"
-        android:hint="Curso"
-        android:inputType="text"
-        android:text="Curso"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
-        app:layout_constraintVertical_bias="0.158"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Telefone"
-        android:inputType="text"
-        android:text="Telefone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
-        app:layout_constraintVertical_bias="0.2"
-        tools:layout_editor_absoluteX="16dp" />
-
-    <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Sobrenome"
-        android:inputType="text"
-        android:text="Sobrenome"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
-        app:layout_constraintVertical_bias="0.057"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="296dp"
-        android:text="Button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="308dp"
-        android:text="Button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
+    <EditText
+        android:id="@+id/editPrimeiroNome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="188dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_margin="16dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_primeiro_nome"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/editSobrenome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_sobrenome"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/editPrimeiroNome"
         tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/editNomeDoCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_nome_do_curso"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/editSobrenome"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/editTelefone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:ems="10"
+        android:hint="@string/txt_hint_edit_telefone_de_contato"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@+id/editNomeDoCurso"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/btnLimpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_margin="16dp"
+        android:text="@string/txt_button_limpar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefone" />
+
+    <Button
+        android:id="@+id/btnSalvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/txt_button_salvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefone" />
+
+    <Button
+        android:id="@+id/btnFinalizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/txt_button_finalizar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTelefone"
+        tools:layout_editor_absoluteX="0dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
