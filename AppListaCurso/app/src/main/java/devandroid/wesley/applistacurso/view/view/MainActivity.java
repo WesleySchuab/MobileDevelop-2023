@@ -17,6 +17,7 @@ import devandroid.wesley.applistacurso.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
+    SharedPreferences.Editor listaVip;
     //nome do arquivo
     public static final String NOME_PREFERENCES ="pref_listavip";
     Pessoa pessoa;
@@ -37,13 +38,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         sharedPreferences = getSharedPreferences(NOME_PREFERENCES, 0 );
         //lista para salvar os dados
-        SharedPreferences.Editor listaVip = sharedPreferences.edit();
+        listaVip = sharedPreferences.edit();
 
         // Instanciando obj
         controller = new PessoaController();
         pessoa = new Pessoa();
-        listaVip.putString("primeiroNome","Wesley");
-        listaVip.apply();
+//        listaVip.putString("primeiroNome","Wesley");
+//        listaVip.putString("sobrenome","schuab");
+//        listaVip.putString("cursoDejsedo","java");
+//        listaVip.putString("telefone","12996674265");
+//        listaVip.apply();
         pessoa.setPrimeiroNome(sharedPreferences.getString("primeiroNome","Not founded").toString());
         pessoa.setSobreNome(sharedPreferences.getString("sobrenome","Not founded"));
         pessoa.setCursoDesejado(sharedPreferences.getString("cursoDejsedo","Not founded"));
@@ -73,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 editSobrenome.setText("");
                 editNomeDoCurso.setText("");
                 editTelefone.setText("");
+                listaVip.clear();
+                listaVip.apply();
             }
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
@@ -85,10 +91,14 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listaVip.putString("primeiroNome", pessoa.getPrimeiroNome());
-                listaVip.putString("sobrenome",pessoa.getSobreNome());
-                listaVip.putString("cursoDejsedo",pessoa.getCursoDesejado());
-                listaVip.putString("telefone",pessoa.getTelefoneContato());
+//                listaVip.putString("primeiroNome", pessoa.getPrimeiroNome());
+//                listaVip.putString("sobrenome",pessoa.getSobreNome());
+//                listaVip.putString("cursoDejsedo",pessoa.getCursoDesejado());
+//                listaVip.putString("telefone",pessoa.getTelefoneContato());
+                listaVip.putString("primeiroNome", editPrimeiroNome.getText().toString());
+                listaVip.putString("sobrenome",editSobrenome.getText().toString());
+                listaVip.putString("cursoDejsedo",editNomeDoCurso.getText().toString());
+                listaVip.putString("telefone",editTelefone.getText().toString());
                 listaVip.apply();
                 Toast.makeText(MainActivity.this, "Nome: " + editPrimeiroNome.getText().toString(), Toast.LENGTH_LONG).show();
                 Toast.makeText(MainActivity.this, "sobrenome: " + editSobrenome.getText().toString(), Toast.LENGTH_LONG).show();
