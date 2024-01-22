@@ -2,6 +2,7 @@ package devandroid.wesley.applistacurso.view.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,8 +15,11 @@ import devandroid.wesley.applistacurso.view.controller.PessoaController;
 import devandroid.wesley.applistacurso.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
+    SharedPreferences sharedPreferences;
+    //nome do arquivo
+    public static final String NOME_PREFERENCES ="pref_listavip";
     Pessoa pessoa;
-PessoaController controller;
+    PessoaController controller;
     String dadosPessoa;
     EditText editPrimeiroNome;
     EditText editSobrenome;
@@ -30,6 +34,9 @@ PessoaController controller;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        sharedPreferences = getSharedPreferences(NOME_PREFERENCES, 0 );
+        //lista para salvar os dados
+        SharedPreferences.Editor listaVip = sharedPreferences.edit();
 
         // Instanciando obj
         controller = new PessoaController();
@@ -72,15 +79,20 @@ PessoaController controller;
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Volte Sempre",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "Volte Sempre", Toast.LENGTH_LONG).show();
                 finish();
             }
         });
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Nome: "+editPrimeiroNome.getText().toString(),Toast.LENGTH_LONG).show();
-                Toast.makeText(MainActivity.this, "sobrenome: "+editSobrenome.getText().toString(),Toast.LENGTH_LONG).show();
+                listaVip.putString("primeiroNome", pessoa.getPrimeiroNome());
+                listaVip.putString("sobrenome",pessoa.getSobreNome());
+                listaVip.putString("cursoDejsedo",pessoa.getCursoDesejado());
+                listaVip.putString("telefone",pessoa.getTelefoneContato());
+                listaVip.apply();
+                Toast.makeText(MainActivity.this, "Nome: " + editPrimeiroNome.getText().toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "sobrenome: " + editSobrenome.getText().toString(), Toast.LENGTH_LONG).show();
             }
         });
     }
