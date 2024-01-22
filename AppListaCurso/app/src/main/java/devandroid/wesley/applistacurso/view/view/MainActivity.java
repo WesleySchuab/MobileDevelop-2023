@@ -1,4 +1,4 @@
-package devandroid.wesley.applistacurso.view;
+package devandroid.wesley.applistacurso.view.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,7 @@ import devandroid.wesley.applistacurso.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
     Pessoa pessoa;
+
     String dadosPessoa;
     EditText editPrimeiroNome;
     EditText editSobrenome;
