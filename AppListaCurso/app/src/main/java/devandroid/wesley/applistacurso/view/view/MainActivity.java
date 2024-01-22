@@ -10,11 +10,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import devandroid.wesley.applistacurso.R;
+import devandroid.wesley.applistacurso.view.controller.PessoaController;
 import devandroid.wesley.applistacurso.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
     Pessoa pessoa;
-
+PessoaController controller;
     String dadosPessoa;
     EditText editPrimeiroNome;
     EditText editSobrenome;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Instanciando obj
+        controller = new PessoaController();
         pessoa = new Pessoa();
         pessoa.setPrimeiroNome("Genivaldo");
         pessoa.setSobreNome("Jatim ");
@@ -42,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         dadosPessoa += " Sobrenome: ";
         dadosPessoa += pessoa.getSobreNome();
         Log.i("obj", "onCreate:  " + dadosPessoa);
+        controller.salvar(pessoa);
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobrenome = findViewById(R.id.editSobrenome);
