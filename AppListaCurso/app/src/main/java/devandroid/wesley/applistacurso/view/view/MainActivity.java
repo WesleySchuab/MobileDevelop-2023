@@ -2,6 +2,7 @@ package devandroid.wesley.applistacurso.view.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,17 +42,14 @@ public class MainActivity extends AppCompatActivity {
         // Instanciando obj
         controller = new PessoaController();
         pessoa = new Pessoa();
-        pessoa.setPrimeiroNome("Genivaldo");
-        pessoa.setSobreNome("Jatim ");
-        pessoa.setCursoDesejado("Alquimia");
-        pessoa.setTelefoneContato("1499911911");
-
-        dadosPessoa = "Nome: ";
-        dadosPessoa += pessoa.getPrimeiroNome();
-        dadosPessoa += " Sobrenome: ";
-        dadosPessoa += pessoa.getSobreNome();
-        Log.i("obj", "onCreate:  " + dadosPessoa);
-        controller.salvar(pessoa);
+        listaVip.putString("primeiroNome","Wesley");
+        listaVip.apply();
+        pessoa.setPrimeiroNome(sharedPreferences.getString("primeiroNome","Not founded").toString());
+        pessoa.setSobreNome(sharedPreferences.getString("sobrenome","Not founded"));
+        pessoa.setCursoDesejado(sharedPreferences.getString("cursoDejsedo","Not founded"));
+        pessoa.setTelefoneContato(sharedPreferences.getString("telefone","Not founded"));
+        Log.i("pr", "onCreate: shared nome: "+sharedPreferences.getString("primeiroNome","Not founded"));
+        Log.i("shared", "onCreate: objeto pessoa nome: "+pessoa.getPrimeiroNome());
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobrenome = findViewById(R.id.editSobrenome);
@@ -66,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         editSobrenome.setText(pessoa.getSobreNome());
         editNomeDoCurso.setText(pessoa.getCursoDesejado());
         editTelefone.setText(pessoa.getTelefoneContato());
+
 
         btnLimpar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "sobrenome: " + editSobrenome.getText().toString(), Toast.LENGTH_LONG).show();
             }
         });
+        editPrimeiroNome.setText(pessoa.getPrimeiroNome());
+        editSobrenome.setText(pessoa.getSobreNome());
+        editNomeDoCurso.setText(pessoa.getCursoDesejado());
+        editTelefone.setText(pessoa.getTelefoneContato());
     }
 
 
