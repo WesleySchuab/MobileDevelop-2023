@@ -2,22 +2,25 @@ package devandroid.wesley.applistacurso.view.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 import devandroid.wesley.applistacurso.R;
+import devandroid.wesley.applistacurso.view.controller.CursoController;
 import devandroid.wesley.applistacurso.view.controller.PessoaController;
+import devandroid.wesley.applistacurso.view.model.Curso;
 import devandroid.wesley.applistacurso.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
     Pessoa pessoa;
+    List<Curso> ListaDeCursos;
     PessoaController controller;
+    CursoController cursoController;
     String dadosPessoa;
     EditText editPrimeiroNome;
     EditText editSobrenome;
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         controller = new PessoaController(MainActivity.this);
         pessoa = new Pessoa();
         controller.buscar(pessoa);
+        cursoController = new CursoController();
+        ListaDeCursos = cursoController.getListaCurso();
 
         editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
         editSobrenome = findViewById(R.id.editSobrenome);

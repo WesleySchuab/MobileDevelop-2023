@@ -3,6 +3,10 @@ package devandroid.wesley.applistacurso.view.model;
 public class Curso {
     private String nomeDoCursoDesejado;
 
+    public Curso(String nomeDocursoDesejado) {
+        this.nomeDoCursoDesejado = nomeDocursoDesejado;
+    }
+
     public String getNomeDoCursoDesejado() {
         return nomeDoCursoDesejado;
     }
