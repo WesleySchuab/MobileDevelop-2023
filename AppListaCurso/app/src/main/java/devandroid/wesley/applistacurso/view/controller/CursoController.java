@@ -20,4 +20,15 @@ public class CursoController {
        listaCurso.add(new Curso("c++"));
        return listaCurso;
    }
+   // metodo que devolve uma lista de Strings
+   public ArrayList<String> dadosParaSpinner(){
+       //lista de string que armazenzar a lista de cursos
+       ArrayList<String> dados = new ArrayList<>();
+       //laço que vai perciorrer a lista de curos salvar no obejeto do tipo curso e passar para a lista
+       for (int i = 0; i < getListaCurso().size(); i++) {
+           Curso objeto = (Curso) getListaCurso().get(i);
+           dados.add(objeto.getNomeDoCursoDesejado());
+       }
+       return dados;
+   }
 }
