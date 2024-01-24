@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.List;
@@ -13,12 +14,11 @@ import java.util.List;
 import devandroid.wesley.applistacurso.R;
 import devandroid.wesley.applistacurso.view.controller.CursoController;
 import devandroid.wesley.applistacurso.view.controller.PessoaController;
-import devandroid.wesley.applistacurso.view.model.Curso;
 import devandroid.wesley.applistacurso.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
     Pessoa pessoa;
-    List<Curso> ListaDeCursos;
+    List<String> nomesDosCursos;
     PessoaController controller;
     CursoController cursoController;
     String dadosPessoa;
@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinalizar;
+    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,16 +43,9 @@ public class MainActivity extends AppCompatActivity {
         pessoa = new Pessoa();
         controller.buscar(pessoa);
         cursoController = new CursoController();
-        ListaDeCursos = cursoController.getListaCurso();
+        nomesDosCursos = cursoController.dadosParaSpinner();
 
-        editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
-        editSobrenome = findViewById(R.id.editSobrenome);
-        editNomeDoCurso = findViewById(R.id.editNomeDoCurso);
-        editTelefone = findViewById(R.id.editTelefone);
-
-        btnLimpar = findViewById(R.id.btnLimpar);
-        btnSalvar = findViewById(R.id.btnSalvar);
-        btnFinalizar = findViewById(R.id.btnFinalizar);
+        initiForm();
 
         editPrimeiroNome.setText(pessoa.getPrimeiroNome());
         editSobrenome.setText(pessoa.getSobreNome());
@@ -90,6 +84,18 @@ public class MainActivity extends AppCompatActivity {
         editSobrenome.setText(pessoa.getSobreNome());
         editNomeDoCurso.setText(pessoa.getCursoDesejado());
         editTelefone.setText(pessoa.getTelefoneContato());
+    }
+
+    private void initiForm() {
+        editPrimeiroNome = findViewById(R.id.editPrimeiroNome);
+        editSobrenome = findViewById(R.id.editSobrenome);
+        editNomeDoCurso = findViewById(R.id.editNomeDoCurso);
+        editTelefone = findViewById(R.id.editTelefone);
+
+        btnLimpar = findViewById(R.id.btnLimpar);
+        btnSalvar = findViewById(R.id.btnSalvar);
+        btnFinalizar = findViewById(R.id.btnFinalizar);
+        spinner = findViewById(R.id.spinner);
     }
 
 
