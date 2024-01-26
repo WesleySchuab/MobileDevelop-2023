@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // TODO desabilitar até o calculo estar feito
                 //Cria um objeto do tipo comustivel para gasolina e outro apra etanol
                 combustivelGasolina = new Combustivel();
                 combustivelEtanol = new Combustivel();
