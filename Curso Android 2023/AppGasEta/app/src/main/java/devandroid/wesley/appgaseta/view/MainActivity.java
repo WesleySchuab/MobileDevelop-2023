@@ -46,11 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Instanciando obj
-        controller = new PessoaController(MainActivity.this);
-        pessoa = new Pessoa();
-        controller.buscar(pessoa);
-        cursoController = new CursoController();
-        nomesDosCursos = cursoController.dadosParaSpinner();
+
 
         initiForm();
 
