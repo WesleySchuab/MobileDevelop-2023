@@ -18,6 +18,7 @@ import devandroid.wesley.appgaseta.R;
 import devandroid.wesley.appgaseta.view.apoio.UtilGasEta;
 import devandroid.wesley.appgaseta.view.controller.CursoController;
 import devandroid.wesley.appgaseta.view.controller.PessoaController;
+import devandroid.wesley.appgaseta.view.model.Combustivel;
 import devandroid.wesley.appgaseta.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
@@ -46,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Instanciando obj
-
+        Combustivel combustivelGasolina;
+        Combustivel combustivelEtanol;
 
         initiForm();
 
