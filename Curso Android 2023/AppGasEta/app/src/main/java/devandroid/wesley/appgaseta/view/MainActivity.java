@@ -80,9 +80,11 @@ public class MainActivity extends AppCompatActivity {
 
                     recomendacao = UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol);
                     txtResultado.setText(recomendacao);
+                    btnSalvar.setEnabled(true);
 
 
                 } else {
+                    btnSalvar.setEnabled(false);
                     Toast.makeText(MainActivity.this,
                             "Por favor, digite os dados obrigatórios...",
                             Toast.LENGTH_LONG).show();
@@ -94,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 editEtanol.setText("");
                 editGasolina.setText("");
+                btnLimpar.setEnabled(false);
             }
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
