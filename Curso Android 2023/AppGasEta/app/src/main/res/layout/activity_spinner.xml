@@ -29,58 +29,49 @@
                 android:text="@string/txt_titulo"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
 
-            <EditText
-                android:id="@+id/editPrimeiroNome"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_primeiro_nome"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName" />
+                android:src="@mipmap/ic_launcher_round" />
 
-            <EditText
-                android:id="@+id/editSobrenome"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_sobrenome"
-                android:inputType="textPersonName" />
-            <EditText
-                android:id="@+id/editNomeDoCurso"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_nome_do_curso"
-                android:inputType="textPersonName" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/editTelefone"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:hint="@string/txt_hint_edit_telefone_contato"
-                android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/editGasolina"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="@string/txt_hint_edit_gasolina"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal" />
 
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="match_parent"
+                <EditText
+                    android:id="@+id/editEtanol"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:ems="10"
+                    android:hint="@string/txt_hint_edit_etanol"
+                    android:inputType="numberDecimal" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <Button
+                android:id="@+id/btnCalcular"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp" />
+                android:layout_marginEnd="16dp"
+                android:text="@string/txt_button_calcular" />
 
             <TextView
                 android:id="@+id/txtListaSpinner"
@@ -104,7 +95,6 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
                     android:text="@string/txt_button_limpar" />
-
                 <Button
                     android:id="@+id/btnSalvar"
                     android:layout_width="wrap_content"
