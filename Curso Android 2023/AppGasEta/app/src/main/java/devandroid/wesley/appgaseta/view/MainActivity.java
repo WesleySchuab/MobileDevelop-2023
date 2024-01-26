@@ -39,45 +39,43 @@ public class MainActivity extends AppCompatActivity {
     Button btnLimpar;
     Button btnSalvar;
     Button btnFinalizar;
+    Combustivel combustivelGasolina;
+    Combustivel combustivelEtanol;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
 
-
-        // Instanciando obj
-        Combustivel combustivelGasolina;
-        Combustivel combustivelEtanol;
-
         initiForm();
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             boolean isDadosOk = true;
+
             @Override
             public void onClick(View v) {
-                if(TextUtils.isEmpty(editGasolina.getText())){
+                if (TextUtils.isEmpty(editGasolina.getText())) {
                     editGasolina.setError("* Obrigatório");
                     editGasolina.requestFocus();
                     isDadosOk = false;
                 }
 
-                if(TextUtils.isEmpty(editEtanol.getText())){
+                if (TextUtils.isEmpty(editEtanol.getText())) {
                     editEtanol.setError("* Obrigatório");
                     editEtanol.requestFocus();
                     isDadosOk = false;
                 }
 
-                if(isDadosOk){
+                if (isDadosOk) {
 
                     precoGasolina = Double.parseDouble(editGasolina.getText().toString());
                     precoEtanol = Double.parseDouble(editEtanol.getText().toString());
 
-                    recomendacao = UtilGasEta.calcularMelhorOpcao(precoGasolina,precoEtanol);
+                    recomendacao = UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol);
                     txtResultado.setText(recomendacao);
 
 
-                }else{
+                } else {
                     Toast.makeText(MainActivity.this,
                             "Por favor, digite os dados obrigatórios...",
                             Toast.LENGTH_LONG).show();
