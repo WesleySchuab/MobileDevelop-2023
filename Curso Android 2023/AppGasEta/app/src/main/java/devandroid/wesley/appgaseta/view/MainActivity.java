@@ -106,15 +106,17 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Cria um objeto do tipo comustivel para gasolina e outro apra etanol
                 combustivelGasolina = new Combustivel();
                 combustivelEtanol = new Combustivel();
-
+                // copula o objeto com seus atributos
                 combustivelGasolina.setNomeDoCombustivel("Gasolina");
                 combustivelGasolina.setPrecoDoCombustivel(precoGasolina);
                 combustivelEtanol.setNomeDoCombustivel("Etanol");
                 combustivelEtanol.setPrecoDoCombustivel(precoEtanol);
-                combustivelGasolina.setRecomendacao(UtilGasEta.calcularMelhorOpcao( precoGasolina,precoEtanol)) ;
-                combustivelEtanol.setRecomendacao(UtilGasEta.calcularMelhorOpcao( precoGasolina,precoEtanol)) ;
+                // Salva no objeto qual e a recomendação
+                combustivelGasolina.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
+                combustivelEtanol.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
             }
         });
 
