@@ -24,11 +24,11 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="16dp"
-                android:background="@color/vermelho"
                 android:gravity="center_horizontal"
                 android:text="@string/txt_titulo"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -65,6 +65,7 @@
                     android:inputType="numberDecimal" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
+
             <Button
                 android:id="@+id/btnCalcular"
                 android:layout_width="match_parent"
@@ -75,13 +76,17 @@
                 android:text="@string/txt_button_calcular" />
 
             <TextView
-                android:id="@+id/txtListaSpinner"
-                android:layout_width="wrap_content"
+                android:id="@+id/txtResultado"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_horizontal"
                 android:text="@string/txt_resultado"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
 
             <Button
                 android:id="@+id/btnLimpar"
