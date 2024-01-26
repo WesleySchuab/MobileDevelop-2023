@@ -99,7 +99,8 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                combustivelGasolina = new Combustivel();
+                combustivelEtanol = new Combustivel();
             }
         });
 
