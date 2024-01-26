@@ -1,6 +1,6 @@
 package devandroid.wesley.appgaseta.view.apoio;
 
-public class UtilgasEta {
+public class UtilGasEta {
     public static String calcularMelhorOpcao(double gasolina, double etanol){
         // preco da gasolina: R$ 5,12
         // preco do etanol: 3,99
