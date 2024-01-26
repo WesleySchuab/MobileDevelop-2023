@@ -2,6 +2,7 @@ package devandroid.wesley.appgaseta.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -41,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
     Button btnFinalizar;
     Combustivel combustivelGasolina;
     Combustivel combustivelEtanol;
+    SharedPreferences preferences;
+
+    SharedPreferences.Editor dadosPreferences;
+
+    // psfs
+    public static final String NOME_PREFERENCES = "pref_gaseta";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +108,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 combustivelGasolina = new Combustivel();
                 combustivelEtanol = new Combustivel();
+
+                combustivelGasolina.setNomeDoCombustivel("Gasolina");
+                combustivelGasolina.setPrecoDoCombustivel(precoGasolina);
+                combustivelEtanol.setNomeDoCombustivel("Etanol");
+                combustivelEtanol.setPrecoDoCombustivel(precoEtanol);
+                combustivelGasolina.setRecomendacao(UtilGasEta.calcularMelhorOpcao( precoGasolina,precoEtanol)) ;
+                combustivelEtanol.setRecomendacao(UtilGasEta.calcularMelhorOpcao( precoGasolina,precoEtanol)) ;
             }
         });
 
