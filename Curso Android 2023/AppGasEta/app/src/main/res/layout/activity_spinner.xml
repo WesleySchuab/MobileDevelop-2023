@@ -37,8 +37,9 @@
                 android:src="@mipmap/ic_launcher_round" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
@@ -47,7 +48,7 @@
                     android:layout_height="48dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="48dp"
                     android:ems="10"
                     android:hint="@string/txt_hint_edit_gasolina"
                     android:importantForAutofill="no"
@@ -55,7 +56,7 @@
 
                 <EditText
                     android:id="@+id/editEtanol"
-                    android:layout_width="match_parent"
+                    android:layout_width="120dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
