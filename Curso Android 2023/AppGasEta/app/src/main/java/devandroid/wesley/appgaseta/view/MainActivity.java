@@ -50,11 +50,17 @@ public class MainActivity extends AppCompatActivity {
 
         initiForm();
 
-
-        btnLimpar.setOnClickListener(new View.OnClickListener() {
+        btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+            }
+        });
+        btnLimpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editEtanol.setText("");
+                editGasolina.setText("");
             }
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
