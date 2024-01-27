@@ -22,14 +22,9 @@ public class CombustivelController {
         //dadosPreferences.putFloat("precoDoCombustivel",(float) combustivel.getPrecoDoCombustivel());
         dadosPreferences.putString("recomendacao",combustivel.getRecomendacao());
         dadosPreferences.apply();
-        Log.i("1w2r","Shared nome combustivel "+sharedPreferences.getString("Gasolina","Not founded"));
-
-        Log.i("1w2e", "onCreate: combustivel: "+sharedPreferences.getString("combustivel",""));
-        //Log.i("1w2e", "onCreate: precoDoCombustivel: "+sharedPreferences.getString("precoDoCombustivel",""));
     }
     public void limpar(){
         dadosPreferences.clear();
         dadosPreferences.apply();
-        Log.i("1w2e","onCreate: shared nome: "+sharedPreferences.getString("combustivel","Not founded"));
     }
 }
