@@ -25,6 +25,9 @@ public class CombustivelController {
 
         Log.i("1w2e", "onCreate: combustivel: "+sharedPreferences.getString("combustivel",""));
         //Log.i("1w2e", "onCreate: precoDoCombustivel: "+sharedPreferences.getString("precoDoCombustivel",""));
-
+    }
+    public void limpar(){
+        dadosPreferences.clear();
+        dadosPreferences.apply();
     }
 }

@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                 editEtanol.setText("");
                 editGasolina.setText("");
                 btnLimpar.setEnabled(false);
+                controller.limpar();
             }
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
