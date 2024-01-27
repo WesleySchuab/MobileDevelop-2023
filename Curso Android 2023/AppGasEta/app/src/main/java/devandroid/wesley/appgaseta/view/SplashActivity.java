@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import devandroid.wesley.appgaseta.R;
+import devandroid.wesley.appgaseta.view.database.GasEtaDB;
 
 public class SplashActivity extends AppCompatActivity {
     public static final int TIME_OUT_SPLASH = 3000;
@@ -23,7 +24,8 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
+                // Chamando a classe que cria o banco de dados
+                GasEtaDB db =new GasEtaDB(SplashActivity.this);
                 Intent telaPrincipal = new Intent(
                         SplashActivity.this,
                         MainActivity.class);
