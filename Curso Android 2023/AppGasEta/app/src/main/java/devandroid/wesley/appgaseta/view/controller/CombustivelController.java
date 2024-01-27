@@ -16,7 +16,6 @@ public class CombustivelController {
     }
     public void salvar(Combustivel combustivel){
         dadosPreferences.putString("combustivel",combustivel.getNomeDoCombustivel());
-        //dadosPreferences.putFloat("precoDoCombustivel",(float) combustivel.getPrecoDoCombustivel());
         dadosPreferences.putString("recomendacao",combustivel.getRecomendacao());
         dadosPreferences.apply();
     }
