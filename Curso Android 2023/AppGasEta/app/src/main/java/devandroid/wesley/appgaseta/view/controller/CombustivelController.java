@@ -3,6 +3,7 @@ package devandroid.wesley.appgaseta.view.controller;
 import static devandroid.wesley.appgaseta.view.controller.PessoaController.NOME_PREFERENCES;
 
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import devandroid.wesley.appgaseta.view.MainActivity;
 import devandroid.wesley.appgaseta.view.model.Combustivel;
@@ -18,9 +19,12 @@ public class CombustivelController {
     }
     public void salvar(Combustivel combustivel){
         dadosPreferences.putString("combustivel",combustivel.getNomeDoCombustivel());
-        dadosPreferences.putFloat("precoDoCombustivel",(float) combustivel.getPrecoDoCombustivel());
+        //dadosPreferences.putFloat("precoDoCombustivel",(float) combustivel.getPrecoDoCombustivel());
         dadosPreferences.putString("recomendacao",combustivel.getRecomendacao());
         dadosPreferences.apply();
+
+        Log.i("1w2e", "onCreate: combustivel: "+sharedPreferences.getString("combustivel",""));
+        //Log.i("1w2e", "onCreate: precoDoCombustivel: "+sharedPreferences.getString("precoDoCombustivel",""));
 
     }
 }

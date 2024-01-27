@@ -17,22 +17,17 @@ import java.util.List;
 
 import devandroid.wesley.appgaseta.R;
 import devandroid.wesley.appgaseta.view.apoio.UtilGasEta;
+import devandroid.wesley.appgaseta.view.controller.CombustivelController;
 import devandroid.wesley.appgaseta.view.controller.CursoController;
 import devandroid.wesley.appgaseta.view.controller.PessoaController;
 import devandroid.wesley.appgaseta.view.model.Combustivel;
 import devandroid.wesley.appgaseta.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
-    Pessoa pessoa;
-    List<String> nomesDosCursos;
-    PessoaController controller;
-    CursoController cursoController;
-    String dadosPessoa;
+    CombustivelController controller;
     EditText editGasolina;
     EditText editEtanol;
-
     TextView txtResultado;
-
     double precoGasolina;
     double precoEtanol;
     String recomendacao;
@@ -109,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO desabilitar até o calculo estar feito
+              controller = new CombustivelController(MainActivity.this);
                 //Cria um objeto do tipo comustivel para gasolina e outro apra etanol
                 combustivelGasolina = new Combustivel();
                 combustivelEtanol = new Combustivel();
@@ -121,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 // Salva no objeto qual e a recomendação
                 combustivelGasolina.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
                 combustivelEtanol.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
+                controller.salvar(combustivelGasolina);
             }
         });
 
