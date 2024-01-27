@@ -9,8 +9,8 @@ import androidx.annotation.Nullable;
 public class GasEtaDB extends SQLiteOpenHelper {
     public static final String DB_NAME = "gaseta_db";
     public static final int DB_VERSION =1;
-    public GasEtaDB(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public GasEtaDB(Context context ) {
+        super(context, DB_NAME, null, DB_VERSION);
     }
 
     @Override
