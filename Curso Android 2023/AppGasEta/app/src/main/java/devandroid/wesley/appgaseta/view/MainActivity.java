@@ -5,24 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.List;
 
 import devandroid.wesley.appgaseta.R;
 import devandroid.wesley.appgaseta.view.apoio.UtilGasEta;
 import devandroid.wesley.appgaseta.view.controller.CombustivelController;
-import devandroid.wesley.appgaseta.view.controller.CursoController;
-import devandroid.wesley.appgaseta.view.controller.PessoaController;
 import devandroid.wesley.appgaseta.view.model.Combustivel;
-import devandroid.wesley.appgaseta.view.model.Pessoa;
 
 public class MainActivity extends AppCompatActivity {
     CombustivelController controller;
