@@ -25,6 +25,8 @@ public class GasEtaDB extends SQLiteOpenHelper {
                 "nomeCombustivel TEXT, " +
                 "precoDocombustivel REAL, " +
                 "recomendacao TEXT)";
+
+        db.execSQL(sqlTabelaCombustivel);
     }
 
     @Override
