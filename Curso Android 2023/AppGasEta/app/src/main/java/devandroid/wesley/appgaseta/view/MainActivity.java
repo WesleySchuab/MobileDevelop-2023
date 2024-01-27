@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -48,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
-
+        controller = new CombustivelController(MainActivity.this);
         initiForm();
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 editGasolina.setText("");
                 btnLimpar.setEnabled(false);
                 controller.limpar();
+
             }
         });
         btnFinalizar.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         btnSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              controller = new CombustivelController(MainActivity.this);
+
                 //Cria um objeto do tipo comustivel para gasolina e outro apra etanol
                 combustivelGasolina = new Combustivel();
                 combustivelEtanol = new Combustivel();
