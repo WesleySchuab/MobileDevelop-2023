@@ -1,5 +1,6 @@
 package devandroid.wesley.appgaseta.view.database;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -33,8 +34,10 @@ public class GasEtaDB extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
-    // Passos
-    // 1 Nome do banco de dados
-    // Versão do banco de dados
 
+    public void salvarObjeto(String tabela,
+                             ContentValues dados) {
+        db.insert(tabela,null,dados);
+
+    }
 }
