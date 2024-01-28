@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class GasEtaDB extends SQLiteOpenHelper {
-    public static final String DB_NAME = "gaseta_db";
-    public static final int DB_VERSION = 1;
+    private static final String DB_NAME = "gaseta_db";
+    private static final int DB_VERSION = 1;
     Cursor cursor;
     SQLiteDatabase db;
 
