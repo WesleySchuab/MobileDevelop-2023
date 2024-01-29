@@ -84,5 +84,7 @@ public class GasEtaDB extends SQLiteOpenHelper {
         return lista;
     }
 
-    
+    public void alterarObjeto(String tabela, ContentValues dados){
+
+    }
 }
