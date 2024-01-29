@@ -85,6 +85,6 @@ public class GasEtaDB extends SQLiteOpenHelper {
     }
 
     public void alterarObjeto(String tabela, ContentValues dados){
-
+        int id = dados.getAsInteger("id");
     }
 }
