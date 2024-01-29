@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -49,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
 
         controller = new CombustivelController(MainActivity.this);
         dados = controller.getListaDeDados();
+        Combustivel obj =dados.get(1);
+        obj.setNomeDoCombustivel("Macarrão");
+        obj.setPrecoDoCombustivel(99);
+        obj.setRecomendacao("Agua");
+        controller.alterar(obj);
+        Log.i("dados", "onCreate: ");
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             boolean isDadosOk = true;
