@@ -3,6 +3,9 @@ package devandroid.wesley.appgaseta.view.controller;
 
 import android.content.ContentValues;
 import android.content.SharedPreferences;
+
+import java.util.List;
+
 import devandroid.wesley.appgaseta.view.MainActivity;
 import devandroid.wesley.appgaseta.view.database.GasEtaDB;
 import devandroid.wesley.appgaseta.view.model.Combustivel;
@@ -30,6 +33,9 @@ public class CombustivelController extends GasEtaDB {
 
 
         salvarObjeto("Combustivel", dados);
+    }
+    public List<Combustivel> getListaDeDados(){
+        return listarDados();
     }
     public void limpar(){
         dadosPreferences.clear();

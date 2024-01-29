@@ -28,7 +28,7 @@ public class GasEtaDB extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // Query sql para criar tabela
         String sqlTabelaCombustivel = "CREATE TABLE Combustivel (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                "nomeCombustivel TEXT, " +
+                "nomeDoCombustivel TEXT, " +
                 "precoDocombustivel REAL, " +
                 "recomendacao TEXT)";
 
@@ -83,4 +83,6 @@ public class GasEtaDB extends SQLiteOpenHelper {
 
         return lista;
     }
+
+    
 }

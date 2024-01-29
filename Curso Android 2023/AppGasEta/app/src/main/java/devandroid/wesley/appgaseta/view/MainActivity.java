@@ -11,12 +11,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 import devandroid.wesley.appgaseta.R;
 import devandroid.wesley.appgaseta.view.apoio.UtilGasEta;
 import devandroid.wesley.appgaseta.view.controller.CombustivelController;
 import devandroid.wesley.appgaseta.view.model.Combustivel;
 
 public class MainActivity extends AppCompatActivity {
+    List<Combustivel> dados;
     CombustivelController controller;
     EditText editGasolina;
     EditText editEtanol;
@@ -41,8 +44,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
-        controller = new CombustivelController(MainActivity.this);
+
         initiForm();
+
+        controller = new CombustivelController(MainActivity.this);
+        dados = controller.getListaDeDados();
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             boolean isDadosOk = true;
