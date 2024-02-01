@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 editEtanol.setText("");
                 editGasolina.setText("");
-                btnLimpar.setEnabled(false);
+                btnSalvar.setEnabled(false);
                 controller.limpar();
 
             }
