@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         obj.setNomeDoCombustivel("Macarrão");
         obj.setPrecoDoCombustivel(99);
         obj.setRecomendacao("Agua");
-        controller.alterar(obj);
+        controller.deletar(2);
         Log.i("dados", "onCreate: ");
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 combustivelGasolina.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
                 combustivelEtanol.setRecomendacao(UtilGasEta.calcularMelhorOpcao(precoGasolina, precoEtanol));
                 controller.salvar(combustivelGasolina);
+                //TODO não esta funcionando
             }
         });
 
