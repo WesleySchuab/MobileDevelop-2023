@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/estrada"
+    android:orientation="vertical"
     tools:context=".view.MainActivity">
 
     <ScrollView
@@ -25,6 +25,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="48dp"
                 android:layout_marginEnd="16dp"
+                android:background="@color/black"
+                android:textColor="@color/white"
                 android:gravity="center_horizontal"
                 android:text="@string/txt_titulo"
                 android:textSize="24sp"
@@ -50,10 +52,12 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="48dp"
+                    android:background="@color/black"
                     android:ems="10"
                     android:hint="@string/txt_hint_edit_gasolina"
                     android:importantForAutofill="no"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:textColorHint="@color/white" />
 
                 <EditText
                     android:id="@+id/editEtanol"
@@ -62,9 +66,11 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="16dp"
+                    android:background="@color/black"
                     android:ems="10"
                     android:hint="@string/txt_hint_edit_etanol"
-                    android:inputType="numberDecimal" />
+                    android:inputType="numberDecimal"
+                    android:textColorHint="@color/white" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -86,6 +92,7 @@
                 android:layout_marginEnd="16dp"
                 android:gravity="center_horizontal"
                 android:text="@string/txt_resultado"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -103,6 +110,7 @@
                 android:id="@+id/btnSalvar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/white"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
