@@ -7,7 +7,7 @@ abstract class Pessoa {
     }
     //void candidatarSeCargoPolitico(){}
 }
-
+// Interface é um metodo abastrato que deve ser construido nas classes que o implementar o objetivo é padronizar
 interface Presidente {
     void candidatarSeCargoPolitico();
 }
