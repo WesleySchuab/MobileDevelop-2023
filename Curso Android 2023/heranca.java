@@ -48,7 +48,11 @@ class Cachorro extends Animal {//Classe filha ou subclasse
     @Override
     void correr(){
         super.correr();//Implementação padrão
+           // A implementação acima de super é equivalente a 
+       /* Animal animal = new Animal();
+        animal.correr(); */
         System.out.println("cachorro com patas: " + this.quantidadePatas);
+     
     }
 
 }
