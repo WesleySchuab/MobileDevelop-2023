@@ -1,6 +1,4 @@
-## Repositório de Estudos - Desenvolvimento Android 2023 (Udemy - Marcos Maddo)
-
-Este repositório servirá como um caderno de notas para acompanhar o curso de Desenvolvimento Android 2023 do professor Marcos Maddo na Udemy. 
+## Repositório de Estudos - Desenvolvimento Android (Udemy - Marcos Maddo) e Mentoria Jamilton Damasceno
 
 ### Modificadores de Acesso em Java
 
